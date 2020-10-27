@@ -67,22 +67,13 @@ monkey.comp = comp;
 monkey.generate = generateADN;
 monkey.editARN = editARN;
 monkey.scor = scor;
-monkey.generate("freddy , eres el mejor ")
+
 /// HASTA ESTE PUNTO ES EL INDIVIDUO
 
 
 /////////////////
 
-let id=setInterval(()=>{
-  let n =monkey.scor()
-  document.querySelector("#asi > h2").innerText=monkey.adn.map((i)=>{
-    return i.char
-  }).join("")
-  if (n){
-    clearInterval(id)
-        
-  }
-},1)
+aalo("freddy eres el mejor")
 
 function aalo(valor){
   monkey.generate(valor)
@@ -102,6 +93,7 @@ function aalo(valor){
 function myfunction(){
   let m=document.getElementById("añañin").value
   if(m!=""){
+    document.getElementById("añañin").value
     aalo(m)
   }
   else{
