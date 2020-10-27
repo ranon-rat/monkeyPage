@@ -29,6 +29,14 @@ button{
 
 }
 input{
+  border-style:solid;
+  border-color:white;
+  text-align:center;
   width:100%;
   height:25px;
+}
+a{
+  padding-top: 10%;
+  text-decoration:none;
+  color:blue;
 }
