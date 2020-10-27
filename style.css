@@ -1,0 +1,34 @@
+body{
+  background:black;
+  color:white;
+  text-align:center;
+  font-family:sans-serif;
+  
+}
+#asi{
+  display:block;
+  margin:auto;
+  width:500px;
+  padding-top:200px;
+}
+h2{
+  font-size:200%;
+}
+button{
+   background-color: #0E0D0D; /* Green */
+  color:white;
+  border-style: solid ;
+  border-color:white;
+  
+  
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+input{
+  width:100%;
+  height:25px;
+}
