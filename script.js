@@ -93,7 +93,7 @@ function aalo(valor){
 function myfunction(){
   let m=document.getElementById("añañin").value
   if(m!=""){
-    document.getElementById("añañin").value
+    document.getElementById("añañin").value=""
     aalo(m)
   }
   else{
