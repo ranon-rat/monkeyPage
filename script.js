@@ -64,6 +64,10 @@ function comp(compare) {
     }
   }
 }
+monkey.comp = comp;
+monkey.generate = generateADN;
+monkey.editARN = editARN;
+monkey.scor = scor;
 // hasta aqui es el individuo ahora sigue funciones de la pagina
 function aalo(valor){
   monkey.generate(valor)
@@ -93,9 +97,5 @@ function myfunction(){
 }
 aalo("freddy eres el mejor")
 
-monkey.comp = comp;
-monkey.generate = generateADN;
-monkey.editARN = editARN;
-monkey.scor = scor;
 
 /// HASTA ESTE PUNTO ES EL INDIVIDUO
