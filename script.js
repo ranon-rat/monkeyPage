@@ -1,6 +1,3 @@
-// deja que la  población = []
-
-/*comenta maldito hijo de puta, deja la poblacion , no hace falta cambiarlo. por ahora estoy probando un solo individuo */
 let monkey = {
   adn: [],
   score: 0,
