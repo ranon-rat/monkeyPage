@@ -9,25 +9,7 @@ let monkey = {
   findThis: ""
 };
 ////// funciones de monkey
-function comp(compare) {
-  // se que hablan en español asi que los comentarios estaran en español
-  let SC = this.findThis;
 
-  this.prob = this.score / SC.length;
-
-  for (let y = 0; y < this.adn.length; y++) {
-    for (let x = 0; x < SC.length; x++) {
-      if (this.adn[y].char == SC[x] && this.adn[y].edit && x == y) {
-        this.score += 1;
-        console.log(this.adn[y].char, SC[x]);
-        console.log(this.adn);
-        this.adn[y].edit = false;
-      } else if (y.char != SC[x] && this.adn[y].edit) {
-        this.editARN(y);
-      }
-    }
-  }
-}
 function generateADN(generate) {
   // te genera una parte del adn
   this.adn=[]
@@ -63,7 +45,26 @@ function scor() {
     return false;
   }
 }
+function comp(compare) {
+  // se que hablan en español asi que los comentarios estaran en español
+  let SC = this.findThis;
 
+  this.prob = this.score / SC.length;
+
+  for (let y = 0; y < this.adn.length; y++) {
+    for (let x = 0; x < SC.length; x++) {
+      if (this.adn[y].char == SC[x] && this.adn[y].edit && x == y) {
+        this.score += 1;
+        console.log(this.adn[y].char, SC[x]);
+        console.log(this.adn);
+        this.adn[y].edit = false;
+      } else if (y.char != SC[x] && this.adn[y].edit) {
+        this.editARN(y);
+      }
+    }
+  }
+}
+// hasta aqui es el individuo ahora sigue funciones de la pagina
 function aalo(valor){
   monkey.generate(valor)
   let id=setInterval(()=>{
