@@ -5,6 +5,9 @@ let monkey = {
   prob: 0,
   findThis: ""
 };
+// source del proyecto https://github.com/ranon-rat/monkeyPage
+
+
 ////// funciones de monkey
 
 function generateADN(generate) {
