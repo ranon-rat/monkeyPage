@@ -92,7 +92,7 @@ function myfunction(){
        
   }
 }
-aalo("freddy eres el mejor")
+aalo("freddy realmente me haces reir con cada uno de tus videos, gracias por hacer un hermoso contenido")
 
 
 /// HASTA ESTE PUNTO ES EL INDIVIDUO
