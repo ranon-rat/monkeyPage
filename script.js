@@ -84,7 +84,7 @@ function aalo(valor){
  
 }
 /// /////// ///// /// /// /// onclick
-aalo("freddy realmente me haces reir con cada uno de tus videos, gracias por hacer un hermoso contenido")
+aalo("freddy realmente me haces disfrutar cada uno de tus videos, gracias por hacer tan buen contenido")
 function myfunction(){
   let m=document.getElementById("añañin").value
   if(m!=""){
