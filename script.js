@@ -81,6 +81,7 @@ function aalo(valor){
  
 }
 /// /////// ///// /// /// /// onclick
+aalo("freddy realmente me haces reir con cada uno de tus videos, gracias por hacer un hermoso contenido")
 function myfunction(){
   let m=document.getElementById("añañin").value
   if(m!=""){
@@ -92,7 +93,7 @@ function myfunction(){
        
   }
 }
-aalo("freddy realmente me haces reir con cada uno de tus videos, gracias por hacer un hermoso contenido")
+
 
 
 /// HASTA ESTE PUNTO ES EL INDIVIDUO
