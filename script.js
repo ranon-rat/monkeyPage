@@ -84,7 +84,7 @@ function aalo(valor){
  
 }
 /// /////// ///// /// /// /// onclick
-aalo("freddy realmente me haces disfrutar cada uno de tus videos, gracias por hacer tan buen contenido. por cierto , debes de darle click a la palabra freddy y algo hermoso veras")
+aalo("monkey page")
 function myfunction(){
   let m=document.getElementById("añañin").value
   if(m!=""){
