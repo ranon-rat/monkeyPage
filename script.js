@@ -1,3 +1,17 @@
+let collection = [];
+for(let i=0;301>i;i++)
+     collection.push(String.fromCharCode(i));
+
+const checkField = function(e){
+    const current = this.value.split('');
+    let fine = '';
+    for (let i =0 ;  current.length > i ;i++)
+        if(collection.indexOf(current[i]) > -1)
+            fine += current[i];
+    console.log(fine);
+    this.value = fine;
+}
+
 let monkey = {
   adn: [],
   score: 0,
@@ -98,5 +112,10 @@ function myfunction(){
 }
 
 
-
+window.onload = function(){
+    document.getElementById('añañin').addEventListener(
+        'keyup',
+        checkField
+    );
+}
 /// HASTA ESTE PUNTO ES EL INDIVIDUO
