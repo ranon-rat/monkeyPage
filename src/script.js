@@ -1,30 +1,33 @@
 "use strict";
-var subjects = 100;
+Object.defineProperty(exports, "__esModule", { value: true });
+const process_1 = require("process");
 function createSubjects(howManySubjects, lengthOfInput) {
+    // im just creating some subjects
     let subjects = [];
     for (let i = 0; i < howManySubjects; i++) {
-        let adn = "";
+        let dna = "";
+        // i know that this is really shitty but i dont have time to make it better
+        // its just a simple random string generator and it works for making the "dna"
         for (let j = 0; j < lengthOfInput.length; j++) {
-            adn += String.fromCharCode(60 + Math.floor(Math.random() * 67));
+            dna += String.fromCharCode(90 + Math.floor(Math.random() * 37));
         }
-        subjects.push(adn);
+        subjects.push(dna);
     }
     return subjects;
 }
 // i fucking hate this function but i cant think in another way of making it 
 function getTheBest(phrase, subjects) {
-    let best = subjects[0];
-    let bestCost = 100000;
-    let bestIndex = 0;
+    let best = subjects[0]; // so yeah 
+    let bestCost = 0;
     for (var i = 0; i < subjects.length; i++) {
         let maybeBetter = subjects[i];
         let maybeCost = 0;
+        // i just need to know the cost with that i only need to make this
         for (var j = 0; j < phrase.length; j++) {
             maybeCost += Math.abs(maybeBetter.charCodeAt(j) - phrase.charCodeAt(j));
         }
-        if (maybeCost < bestCost) {
+        if (maybeCost < bestCost || i == 0) {
             best = maybeBetter;
-            bestIndex = i;
             bestCost = maybeCost;
         }
     }
@@ -32,13 +35,18 @@ function getTheBest(phrase, subjects) {
 }
 function mutateSubjects(subjects, phrase) {
     let [theBest, _] = getTheBest(phrase, subjects);
+    // i create a new array with the same length as the subjects
     let newSubjects = [];
     for (let i = 0; i < subjects.length; i++) {
         newSubjects.push("");
         for (let j = 0; j < subjects[i].length; j++) {
             let char = theBest[j];
+            // it works randomnly 
             if (Math.random() * 2 > 1.3) {
-                char = String.fromCharCode(Math.round(theBest.charCodeAt(j) + [1, -1][Math.floor(Math.random() * 3 - 1)] * Math.random()));
+                char = String.fromCharCode(// i just generate a random char
+                Math.round(
+                // maybe im adding , maybe im substracting
+                theBest.charCodeAt(j) + [1, -1][Math.round(Math.random() * 2)] * Math.random()));
             }
             newSubjects[i] += char;
         }
@@ -46,24 +54,19 @@ function mutateSubjects(subjects, phrase) {
     return newSubjects;
 }
 function main() {
-    let subjects = mutateSubjects(createSubjects(10, "hello world"), "hello world");
-    let generation = 0;
-    let [bestBefore, bestCostBefore] = getTheBest("hello world", subjects);
+    let phrase = "me culie a tu abuela";
+    let subjects = mutateSubjects(createSubjects(60, phrase), phrase);
+    let generation = 1;
+    let [bestBefore, bestCostBefore] = getTheBest(phrase, subjects);
     let interval = setInterval(() => {
-        let subSubjects = mutateSubjects(subjects, "hello world");
-        let [best, cost] = getTheBest("hello world", subSubjects);
+        let subSubjects = mutateSubjects(subjects, phrase);
+        let [best, cost] = getTheBest(phrase, subSubjects);
         if (cost < bestCostBefore) {
             bestBefore = best;
             bestCostBefore = cost;
             subjects = subSubjects;
-            console.log("abc");
         }
-        console.log("--------------------------------");
-        console.log("cost            :", cost);
-        console.log("best            :", best);
-        console.log("best before     :", bestBefore);
-        console.log("best before cost:", bestCostBefore);
-        console.log("generation      :", generation);
+        process_1.stdout.write(`\r${best.split("").filter(c => ![6, 10].includes(c.charCodeAt(0))).join("")} ${cost} ${best.split("").map(i => i.charCodeAt(0))} `);
         generation++;
         if (cost == 0) {
             clearInterval(interval);

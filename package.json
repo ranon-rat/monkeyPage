@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@types/node": "^17.0.32"
+  },
+  "dependencies": {
+    "figlet": "^1.5.2"
+  }
+}
